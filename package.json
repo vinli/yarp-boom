@@ -1,0 +1,45 @@
+{
+  "name": "yarp-boom",
+  "version": "1.0.0",
+  "description": "Throw Boom objects when your Yarps fail.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive -R spec",
+    "test-cov": "istanbul cover node_modules/.bin/_mocha -- --recursive -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinli/yarp-boom.git"
+  },
+  "author": "Mathew Gardner <mathew@vin.li>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinli/yarp-boom/issues"
+  },
+  "homepage": "https://github.com/vinli/yarp-boom#readme",
+  "dependencies": {
+    "boom": "^3.1.1",
+    "yarp": "^0.4.5"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint": "^0.22.1",
+    "eslint-config-vinli": "^2.0.3",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4",
+    "nock": "^5.2.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "request",
+    "http",
+    "rest",
+    "promise",
+    "q",
+    "yarp",
+    "boom"
+  ],
+  "engines" : { "node" : ">=4" }
+}
