@@ -25,6 +25,22 @@ describe('yarp-boom', () => {
       });
   });
 
+  it('should pass along the second param to yarp', () => {
+    const m = nock('http://some.domain')
+      .get('/some/url')
+      .reply(400, { foo: 'bar' });
+
+    return yarpBoom('http://some.domain/some/url', true)
+      .then((resp) => {
+        expect(resp).to.have.property('statusCode', 400);
+        expect(resp).to.have.property('data');
+        expect(resp.data).to.be.deep.equal({ foo: 'bar' });
+      })
+      .finally(() => {
+        m.done();
+      });
+  });
+
   it('should return a boom object for a 4xx level error', () => {
     const m = nock('http://some.domain')
       .get('/some/url')

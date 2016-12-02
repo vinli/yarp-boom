@@ -12,6 +12,6 @@ const onError = function(err) {
   }
 };
 
-module.exports = function(options) {
-  return yarp(options).catch(onError);
+module.exports = function(...options) {
+  return yarp(...options).catch(onError);
 };
