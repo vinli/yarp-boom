@@ -49,6 +49,6 @@
     "boom"
   ],
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   }
 }
