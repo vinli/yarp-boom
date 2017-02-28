@@ -48,7 +48,7 @@ describe('yarp-boom', () => {
 
     return yarpBoom('http://some.domain/some/url')
       .then(() => {
-        console.log('should not get here');
+        console.info('should not get here');
       })
       .catch((err) => {
         expect(err).to.have.property('isBoom', true);
@@ -67,7 +67,7 @@ describe('yarp-boom', () => {
 
     return yarpBoom('http://some.domain/some/url')
       .then(() => {
-        console.log('should not get here');
+        console.info('should not get here');
       })
       .catch((err) => {
         expect(err).to.have.property('isBoom', true);

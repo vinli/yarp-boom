@@ -1,9 +1,9 @@
 'use strict';
 
-const yarp = require('yarp');
 const Boom = require('boom');
+const yarp = require('yarp');
 
-const onError = function(err) {
+const onError = (err) => {
   /* istanbul ignore else */
   if (err.statusCode && err.data) {
     throw Boom.create(err.statusCode, err.data.message);
@@ -12,6 +12,6 @@ const onError = function(err) {
   }
 };
 
-module.exports = function(...options) {
+module.exports = (...options) => {
   return yarp(...options).catch(onError);
 };

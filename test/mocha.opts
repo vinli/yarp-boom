@@ -1,0 +1,4 @@
+--recursive
+--reporter spec
+--check-leaks
+--globals __core-js_shared__,__coverage__
