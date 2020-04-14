@@ -8,7 +8,7 @@ const yarpBoom = require('../index');
 
 describe('yarp-boom', () => {
   it('should export a function', () => {
-    expect(yarpBoom).to.be.a.Function;
+    expect(yarpBoom).to.be.a('function');
   });
 
   it('should return a response for a 200 level status code', () => {
@@ -53,7 +53,8 @@ describe('yarp-boom', () => {
       .catch((err) => {
         expect(err).to.have.property('isBoom', true);
         expect(err).to.have.property('message', 'Not Found');
-        expect(err).to.have.deep.property('output.statusCode', 404);
+        expect(err).to.have.property('output');
+        expect(err.output).to.have.property('statusCode', 404);
       })
       .finally(() => {
         m.done();
@@ -72,7 +73,8 @@ describe('yarp-boom', () => {
       .catch((err) => {
         expect(err).to.have.property('isBoom', true);
         expect(err).to.have.property('message', 'Internal Server Error');
-        expect(err).to.have.deep.property('output.statusCode', 500);
+        expect(err).to.have.property('output');
+        expect(err.output).to.have.property('statusCode', 500);
       })
       .finally(() => {
         m.done();
